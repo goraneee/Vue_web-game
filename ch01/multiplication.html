@@ -11,7 +11,7 @@
     <div id="root">
         <div>{{first}} X {{second}}는?</div>
         <form v-on:submit="onSubmitForm">
-            <input type="number" v-model="userInput">
+            <input type="number" ref = "answer" v-model="userInput">
             <button type="submit">입력</button>
         </form>
         <div id="result">{{result}}</div>
@@ -32,8 +32,17 @@
 
                     if (this.first * this.second === parseInt(this.userInput)) {
                         this.result = '정답';
+                        this.first =  Math.ceil(Math.random() * 9),
+                        this.second =  Math.ceil(Math.random() * 9), 
+                        this.userInput = '';
+                        this.$refs.answer.focus();
+
                     } else {
                         this.result = '땡';
+                        this.first =  Math.ceil(Math.random() * 9),
+                        this.second =  Math.ceil(Math.random() * 9),
+                        this.$refs.answer.focus();
+
                     }
                 }
             }
