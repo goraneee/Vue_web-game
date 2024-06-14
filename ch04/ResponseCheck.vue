@@ -2,7 +2,8 @@
   <div>
     <div id="screen" :class="state" @click="onClickScreen">{{ message }}</div>
     <div v-if="result.length">
-      <div>평균 시간: {{ average }}ms</div>
+      <div>평균 시간:  {{ average }}ms</div>
+      <div>깃 커밋 테스트</div>
       <button @click="onReset">리셋</button>
     </div>
   </div>
